@@ -1,7 +1,7 @@
-<div style="text-align:center">
+<h1 align="center">
   <img src="./public/elo.png" />
   <img src="./public/lobo.png" />
-</div>
+</h1>
 
 # Projeto Trainee 
 Aplicação feita em nodeJs e ReactJs

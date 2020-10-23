@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const routes = require('./routes')
 
 const app = express()
 mongoose.connect('mongodb+srv://trainee:trainee@cluster0.fdaua.mongodb.net/trainee?retryWrites=true&w=majority', {
@@ -7,11 +8,7 @@ mongoose.connect('mongodb+srv://trainee:trainee@cluster0.fdaua.mongodb.net/train
   useUnifiedTopology: true
 })
 
-app.get('/', (request, response) => {
-  return response.json({
-    nome: 'Thallis André',
-    idade: '20 anos'
-  })
-})
+app.use(express.json())
+app.use(routes)
 
 app.listen(3333)

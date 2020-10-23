@@ -26,4 +26,28 @@ module.exports = {
       return errorHandler.serverError(response);
     }
   },
+
+  async login(request, response) {
+    try {
+      const {email, password} = request.body;
+
+      let user = await User.findOne({ email });
+
+      if (user) {
+        const passwordCompare = bcrypter.compare(password, user.password)
+        if(passwordCompare) {
+          return errorHandler.success('Usuário logado com sucesso', response);
+
+        }else {
+          return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
+        }
+
+      } else {
+        return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
+      }
+
+    } catch (error) {
+      return errorHandler.serverError(response);
+    }
+  },
 };

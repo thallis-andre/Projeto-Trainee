@@ -1,5 +1,13 @@
 module.exports = {
 
+  badRequest(message, response) {
+    return response.json({
+      error: true,
+      satusCode: 400,
+      message: message,
+    });
+  },
+  
   forbidden(message, response) {
     return response.json({
       error: true,
@@ -14,7 +22,15 @@ module.exports = {
       satusCode: 500,
       message: 'Erro interno do servidor, tente novamente.',
     });
-  }
+  },
+
+  success(message, response) {
+    return response.json({
+      error: false,
+      satusCode: 200,
+      message: message,
+    });
+  },
 }
 
 

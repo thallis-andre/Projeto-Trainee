@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const bcrypter = require('../utils/bcrypter');
 const { forbidden, serverError } = require('../errors/http-errors');
 
 module.exports = {
@@ -12,10 +13,10 @@ module.exports = {
         user = await User.create({
           name,
           email,
-          password,
+          password: bcrypter.hash(password),
           image,
         });
-        
+
       } else {
         return forbidden('Usuário já cadastrado.', response);
       }

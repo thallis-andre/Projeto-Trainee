@@ -1,9 +1,9 @@
 const User = require('../models/User');
 const bcrypter = require('../utils/bcrypter');
-const { forbidden, serverError } = require('../errors/http-errors');
+const errorHandler = require('../errors/errorHandler');
 
 module.exports = {
-  async create(request, response) {
+  async register(request, response) {
     try {
       const { name, email, password, image } = request.body;
 
@@ -18,12 +18,12 @@ module.exports = {
         });
 
       } else {
-        return forbidden('Usuário já cadastrado.', response);
+        return errorHandler.forbidden('Usuário já cadastrado.', response);
       }
 
       return response.json(user);
     } catch (error) {
-      return serverError(response);
+      return errorHandler.serverError(response);
     }
   },
 };

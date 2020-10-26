@@ -1,0 +1,8 @@
+.header {
+  background-color: #fff;
+}
+
+.dropdown-img .nav-link{
+  color: rgba(0,0,0,.5);
+  padding-left: 6px !important;
+}

@@ -1,8 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Routes from './routes'
+
+
+
+import './global.css';
+
+import Header from './pages/Header';
 
 function App() {
   return (
-    <h1>Hello world</h1>
+    <>
+    <BrowserRouter>
+      <Header></Header>
+      <Routes />
+    </BrowserRouter>
+    </>
   );
 }
 

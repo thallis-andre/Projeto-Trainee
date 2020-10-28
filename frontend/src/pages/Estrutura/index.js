@@ -15,4 +15,4 @@ export default function Estrutura(){
     </div>
     )
 }
-//na className text colocaremos o login e cadastro
+//na className text colocaremos o login e cadastro,ainda falta arrumar a rota e uns design

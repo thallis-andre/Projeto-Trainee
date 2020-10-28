@@ -9,8 +9,12 @@ import Pokemon from '../Pokemon'
 function Home() {
   return (
     <div className="container-home">
-    <Sidebar />
-    <Pokemon />
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="content">
+        <Pokemon />
+      </div>
     </div>
   );
 }

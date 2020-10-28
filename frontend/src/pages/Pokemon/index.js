@@ -6,7 +6,16 @@ import './styles.css';
 function Pokemon() {
 
   return (
-      <h1>Pokemon</h1>
+    <div className="pokemon-content">
+
+      <div className="square-pokemon">
+        <div className="circle-attributes">
+          <div className="circle-heigth"></div>
+          <div className="circle-weight"></div>
+        </div>
+
+      </div>
+    </div>
   );
 }
 

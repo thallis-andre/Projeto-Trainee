@@ -1,15 +1,14 @@
 .sidebar-container {
   background-color: #fff;
-  display: flex;  
-  flex-direction: column;
   max-width: 200px;
   align-items: center;
+  position: absolute;
 }
 
 .pokemon-type {
   max-width: 150px;
   width: 150px;
-  margin: 5px 0;
+  margin: 5px 25px;
   padding: 10px;
   border: 0;
   border-radius: 8px;
@@ -20,4 +19,3 @@
   line-height: 30px;
   outline: 0 !important;
 }
-

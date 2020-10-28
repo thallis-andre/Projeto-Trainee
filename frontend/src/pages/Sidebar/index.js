@@ -33,7 +33,6 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
 
-
       { pokemonsTypes.map(pokemonsTypes => (
         <button className="pokemon-type"
         onClick={() => setIsFocus(pokemonsTypes.type)}

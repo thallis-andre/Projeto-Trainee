@@ -6,12 +6,12 @@ import bolinha from '../../assets/bolinha.png';
 
 export default function Estrutura(){
     return (
-        <div className='continer'>
-        <div className='image'>
+        <div className='estrutura-container'>
+        <div className='estrutura-image'>
             <h1>Welcome Trainer</h1>
             <img src={bolinha} alt="Gotta catch'em all"/>
         </div>
-        <div className='text'> texto</div>
+        <div className='textos'> texto</div>
     </div>
     )
 }

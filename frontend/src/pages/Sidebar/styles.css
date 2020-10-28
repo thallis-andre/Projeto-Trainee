@@ -1,0 +1,23 @@
+.sidebar-container {
+  background-color: #fff;
+  display: flex;  
+  flex-direction: column;
+  max-width: 200px;
+  align-items: center;
+}
+
+.pokemon-type {
+  max-width: 150px;
+  width: 150px;
+  margin: 5px 0;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #f2f1f0;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  outline: 0 !important;
+}
+

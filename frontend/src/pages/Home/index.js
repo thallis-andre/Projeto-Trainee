@@ -2,14 +2,16 @@ import React from 'react';
 
 import './styles.css';
 
-import Header from '../Header'
+import Sidebar from '../Sidebar'
+import Pokemon from '../Pokemon'
 
 
 function Home() {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <div className="container-home">
+    <Sidebar />
+    <Pokemon />
+    </div>
   );
 }
 

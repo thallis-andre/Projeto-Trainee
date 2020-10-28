@@ -1,10 +1,10 @@
-.continer {
+.estrutura-container {
     width:100%;
     padding:10px;
     background:#ddd;
     height:600px;
 }
-.text {
+.textos {
     width:600px;
     padding:10px;
     background:#fb3c33;
@@ -14,7 +14,7 @@
     margin-right: 60px;
 
 }
-.image {
+.estrutura-image {
     width:600px;
     padding: 10px;
     background:#fb3c33;
@@ -25,10 +25,12 @@
     text-align: center;
     
 }
-.image  h1{
+.estrutura-image  h1{
     font-family: Arial, Helvetica, sans-serif;
     margin: 30px;
 }
-.image img{
-    width: 150px;    
+.estrutura-image img{
+    width: 150px;  
+    margin-top:12%;
+     
 }

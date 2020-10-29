@@ -1,3 +1,7 @@
 import React from 'react';
 
-export default function Cadastro(){}
+import './styles.css';
+
+export default function Cadastro(){
+    
+}

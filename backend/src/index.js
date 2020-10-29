@@ -8,6 +8,7 @@ mongoose.connect('mongodb+srv://trainee:trainee@cluster0.fdaua.mongodb.net/train
   useUnifiedTopology: true
 })
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 

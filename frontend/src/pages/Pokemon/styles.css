@@ -1,5 +1,5 @@
 .pokemon-content {
-  background-color: blue;
+  /* background-color: blue; */
   width: 100%;
   height: 500px;
   display: flex;
@@ -8,17 +8,21 @@
 }
 
 .pokemon-content .square-pokemon {
-  background-color: yellow;
-  width: 400px;
-  height: 300px;
-  margin-left: 50px;
+  background-color: #fff;
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+  /* margin-left: 50px; */
+  /* border: 0.5px solid #d5d5d5; */
+
 }
 
 .pokemon-content .square-pokemon .circle-attributes {
 
 }
 .pokemon-content .square-pokemon .circle-heigth {
-  background-color: black;
+  background-color: #fff;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -26,9 +30,21 @@
   position: relative;
   right: 40px;
   bottom: 30px;
+  text-align: center;
+  /* border: 0.5px solid #d5d5d5; */
+  box-sizing: border-box;
+  padding-top: 38px;
+  z-index: 2;
+
+}
+
+.pokemon-content .square-pokemon .circle-heigth span {
+  color: #6d6a64;
+  font-size: 18px;
+  font-weight: bold;
 }
 .pokemon-content .square-pokemon .circle-weight {
-  background-color: black;
+  background-color: #fff;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -36,4 +52,93 @@
   position: relative;
   left: 240px;
   bottom: 30px;
+  text-align: center;
+  /* border: 0.5px solid #d5d5d5; */
+  box-sizing: border-box;
+  padding-top: 38px;
+  z-index: 2;
+
+}
+
+.pokemon-content .square-pokemon .circle-weight span {
+  color: #6d6a64;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pokemon-content .pokemon-attributes .bg-danger{
+  background-color: #df4f4e !important
+}
+.pokemon-content .pokemon-attributes .bg-warning{
+  background-color: #f59a16 !important
+}
+.pokemon-content .pokemon-attributes .bg-info{
+  background-color: #f6ca32 !important
+}
+.pokemon-content .pokemon-attributes .bg-success{
+  background-color: #74ac59 !important
+}
+
+.pokemon-content .square-pokemon .square-content{
+  text-align: center;
+}
+.pokemon-content .square-pokemon .pokemon-id{
+  font-size: 150px;
+  font-weight: bold;
+  color: #f2f1f0;
+  position: relative;
+  bottom: 115px;
+  z-index: 1;
+}
+.pokemon-content .square-pokemon .pokemon-name{
+  position: relative;
+  bottom: 270px;
+  color: #6d6a64;
+  font-weight: 700;
+}
+.pokemon-content .square-pokemon .type{
+  position: relative;
+  bottom: 270px;
+  font-weight: 600;
+}
+.pokemon-content .square-pokemon .special-ability{
+  position: relative;
+  bottom: 270px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #6d6a64;
+
+}
+.pokemon-content .square-pokemon img{
+  position: relative;
+  bottom: 270px;
+  z-index: 2;
+}
+
+
+.pokemon-content .pokemon-attributes {
+  width: 400px;
+  margin-left: 50px;
+}
+
+.pokemon-content .pokemon-attributes .progress{
+  background-color: #d6d4d3 !important;
+  /* background-color: #e0dedd !important; */
+  margin-left: 20px;
+}
+
+.pokemon-content .pokemon-attributes .attributes-name{
+  display: grid;
+  grid-template-columns: 150px 50px 350px;
+  text-align: end;
+  align-items: baseline;
+  margin-top: 15px;
+
+  font-weight: 500;
+  font-size: 20px;
+  color: #6d6a64;
+}
+
+.pokemon-content .pokemon-attributes .attributes-name .number-status{
+  color: #363433 !important;
 }

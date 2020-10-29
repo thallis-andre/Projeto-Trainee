@@ -22,3 +22,9 @@
   line-height: 30px;
   outline: 0 !important;
 }
+
+
+.pokemon-type:hover{
+  box-shadow: inset 5px 5px 15px #d4d4d4, 
+  inset -5px -5px 15px #ffffff;
+}

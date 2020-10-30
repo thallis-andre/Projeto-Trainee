@@ -7,8 +7,13 @@ import api from '../../services/api';
 
 export default function Login(){
     function handleLogin(e){
-        const[]
+        const[email, setEmail]= useState('');
+        const[senha, setSenha]= useState('');
         e.preventDefault();
+        const data ={
+            email,
+            senha,
+        }
     }
     return(
         <div className="login-container">
@@ -16,8 +21,16 @@ export default function Login(){
             
             <form onSubmit={handleLogin}>
                 <h1>Faça seu login</h1>
-                <input placeholder="E-mail"/>
-                <input placeholder="Senha"/>
+                <input
+                 placeholder="E-mail"
+                 value={email}
+                 onChange={e => setEmail(e.target.value)}
+                 />
+                <input 
+                placeholder="Senha"
+                value={senha}
+                onChange={e => setSenha(e.target.value)}
+                />
                 <button className="button" type='submit'>Entrar</button>
 
                     <Link to="/register">

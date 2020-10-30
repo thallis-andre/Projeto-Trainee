@@ -1,4 +1,6 @@
 import React,{useState} from 'react';
+import api from '../../services/api';
+
 
 import './styles.css';
 
@@ -6,7 +8,7 @@ export default function Cadastro(){
     const[name, setName]=useState('');
     const[email, setEmail]=useState('');
     const[senha, setSenha]=useState('');
-    function handleCadastro(e){
+    async function handleCadastro(e){
         e.preventDefault();
         
         const data = {
@@ -14,6 +16,8 @@ export default function Cadastro(){
             email,
             senha,
         }
+      const response = await api.post('register',data);
+      
     }
     return(
         <div className="cadastro-container">

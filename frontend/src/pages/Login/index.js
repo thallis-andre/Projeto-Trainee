@@ -1,15 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {FiLogIn} from 'react-icons/fi';
 import {Link} from 'react-router-dom';
 
 import './styles.css';
+import api from '../../services/api';
 
 export default function Login(){
+    function handleLogin(e){
+        const[]
+        e.preventDefault();
+    }
     return(
         <div className="login-container">
         <section className="form">
             
-            <form>
+            <form onSubmit={handleLogin}>
                 <h1>Faça seu login</h1>
                 <input placeholder="E-mail"/>
                 <input placeholder="Senha"/>

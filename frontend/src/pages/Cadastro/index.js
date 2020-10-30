@@ -1,16 +1,39 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import './styles.css';
 
 export default function Cadastro(){
+    const[name, setName]=useState('');
+    const[email, setEmail]=useState('');
+    const[senha, setSenha]=useState('');
+    function handleCadastro(e){
+        e.preventDefault();
+        
+        const data = {
+            name,
+            email,
+            senha,
+        }
+    }
     return(
         <div className="cadastro-container">
             <section className="form">
-                <form>
+                <form onSubmit={handleCadastro}>
                     <h1>Faça seu cadastro</h1>
-                    <input placeholder="Nome"/>
-                    <input placeholder="Seu melhor e-mail"/>
-                    <input placeholder="Senha"/>
+                    <input 
+                    placeholder="Nome"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    />
+                    <input type="email" 
+                    placeholder="Seu melhor e-mail"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    />
+                    <input placeholder="Senha"
+                    value={senha}
+                    onChange={e => setSenha(e.target.value)}
+                    />
                     <button className="button">Concluir cadastro</button>
 
                 </form>

@@ -10,7 +10,7 @@ export default function Login(){
             
             <form>
                 <h1>Faça seu login</h1>
-                <input placeholder="Sua ID"/>
+                <input placeholder="E-mail"/>
                 <input placeholder="Senha"/>
                 <button className="button" type='submit'>Entrar</button>
 

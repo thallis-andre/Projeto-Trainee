@@ -8,7 +8,7 @@ export default function Cadastro(){
     const[name, setName]=useState('');
     const[email, setEmail]=useState('');
     const[senha, setSenha]=useState('');
-    async function handleCadastro(e){
+    function handleCadastro(e){
         e.preventDefault();
         
         const data = {
@@ -16,7 +16,7 @@ export default function Cadastro(){
             email,
             senha,
         }
-      const response = await api.post('register',data);
+      api.post('register',data);
       
     }
     return(

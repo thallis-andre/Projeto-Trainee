@@ -8,12 +8,14 @@ import Routes from './routes'
 import './global.css';
 
 import Header from './pages/Header';
+// import Loader from './pages/Loader';
 
 function App() {
   return (
     <>
     <BrowserRouter>
-      <Header></Header>
+      <Header />
+      {/* <Loader /> */}
       <Routes />
     </BrowserRouter>
     </>

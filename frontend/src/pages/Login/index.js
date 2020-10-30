@@ -6,7 +6,7 @@ import './styles.css';
 import api from '../../services/api';
 
 export default function Login(){
-    function handleLogin(e){
+    async function handleLogin(e){
         const[email, setEmail]= useState('');
         const[senha, setSenha]= useState('');
         e.preventDefault();

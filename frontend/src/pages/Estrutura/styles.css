@@ -12,6 +12,9 @@
   padding: 10px;
   background: #fff;
   height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .estrutura-image {
   width: 600px;

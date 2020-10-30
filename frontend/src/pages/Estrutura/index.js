@@ -3,6 +3,7 @@ import React from 'react';
 import './styles.css';
 
 import bolinha from '../../assets/bolinha.png';
+import Login from '../Login';
 
 export default function Estrutura(){
     return (
@@ -11,7 +12,9 @@ export default function Estrutura(){
             <h1>Welcome Trainer</h1>
             <img src={bolinha} alt="Gotta catch'em all"/>
         </div>
-        <div className='estrutura-textos'> texto</div>
+        <div className='estrutura-textos'>
+            <Login/>
+        </div>
     </div>
     )
 }

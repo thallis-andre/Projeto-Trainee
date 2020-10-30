@@ -5,12 +5,14 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import api from '../../services/api';
 
-export default function Login(){
+export default function Login(){ 
+    const[email, setEmail]= useState('');
+    const[senha, setSenha]= useState('');
+    
     async function handleLogin(e){
-        const[email, setEmail]= useState('');
-        const[senha, setSenha]= useState('');
+       
         e.preventDefault();
-        const data ={
+        const data = {
             email,
             senha,
         }

@@ -14,7 +14,7 @@ export default function Routes() {
             <Route path="/profile" exact component={Profile} />
             <Route path="/home" exact component={Home} />
             <Route path="/login" exact component={Estrutura}/>
-            <Route path="/teste" exact component={Cadastro}/>
+            <Route path="/register" exact component={Cadastro}/>
         </Switch>
     );
 }

@@ -8,6 +8,7 @@ export default function Cadastro(){
     const[name, setName]=useState('');
     const[email, setEmail]=useState('');
     const[senha, setSenha]=useState('');
+   
     async function handleCadastro(e){
         e.preventDefault();
         
@@ -16,8 +17,13 @@ export default function Cadastro(){
             email,
             senha,
         }
-        const response = await  api.post('register',data);
-      
+        try{
+            const response = await  api.post('register',data);
+            alert('Cadastro realizado com sucesso');
+        }
+        catch(err){
+            alert('Não foi possível realizar o cadastro')
+        }
     }
     return(
         <div className="cadastro-container">

@@ -8,7 +8,7 @@ import api from '../../services/api';
 export default function Login(){ 
     const[email, setEmail]= useState('');
     const[senha, setSenha]= useState('');
-    
+
     async function handleLogin(e){
        
         e.preventDefault();
@@ -16,7 +16,13 @@ export default function Login(){
             email,
             senha,
         }
-        const response = await api.post('login',{data})
+        try{
+            const response = await api.post('login',{data});
+            alert('Login feito com sucesso');
+        }catch(err){
+            alert('Usuário não encontrado');
+        }
+        
     }
     return(
         <div className="login-container">

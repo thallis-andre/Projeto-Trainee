@@ -42,6 +42,7 @@ export default function Cadastro(){
                     />
                     <input placeholder="Senha"
                     value={senha}
+                    type="passsword"
                     onChange={e => setSenha(e.target.value)}
                     />
                     <button className="button">Concluir cadastro</button>

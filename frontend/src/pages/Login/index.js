@@ -18,6 +18,7 @@ export default function Login(){
         }
         try{
             const response = await api.post('login',{data});
+            console.log(response.data);
             alert('Login feito com sucesso');
         }catch(err){
             alert('Usuário não encontrado');

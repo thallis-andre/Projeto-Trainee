@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './styles.css';
 
 import bolinha from '../../assets/bolinha.png';
 import Login from '../Login';
+import Cadastro from '../Cadastro';
 
 export default function Estrutura(){
+
+
     return (
         <div className='estrutura-container'>
         <div className='estrutura-image'>

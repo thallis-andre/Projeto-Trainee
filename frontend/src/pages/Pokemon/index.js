@@ -36,7 +36,7 @@ function Pokemon(props) {
     <>
       {
         props.listPokemons.map((pokemon, index) => (
-          <div className="pokemon-content" key={pokemon.id} style={{backgroundColor: (index % 2) == 0 ? '#f2f1f0' : '#f7f6f6'}}>
+          <div key={index} className="pokemon-content" key={pokemon.id} style={{backgroundColor: (index % 2) == 0 ? '#f2f1f0' : '#f7f6f6'}}>
             <div className="square-pokemon">
               <div className="circle-attributes">
                 <div className="circle-heigth">

@@ -15,11 +15,11 @@ export default function Cadastro(){
         const data = {
             name,
             email,
-            senha,
+            password: senha,
         }
         try{
-            const response = await  api.post('register',data);
-            alert('Cadastro realizado com sucesso');
+            const response = await  api.post('register', data);
+            alert(response.data.message);
         }
         catch(err){
             alert('Não foi possível realizar o cadastro')

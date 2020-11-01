@@ -10,9 +10,9 @@ import Cadastro from './pages/Cadastro';
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/" component={Estrutura} />
             <Route path="/profile" component={Profile} />
             <Route path="/home" component={Home} />
+            <Route path="/" component={Estrutura} />
         </Switch>
     );
 }

@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import api from '../../services/api';
-
+import {FiLogOut} from 'react-icons/fi';
+import {Link} from 'react-router-dom';
 
 import './styles.css';
 
@@ -42,11 +43,15 @@ export default function Cadastro(){
                     />
                     <input placeholder="Senha"
                     value={senha}
-                    type="passsword"
+                    type="password"
                     onChange={e => setSenha(e.target.value)}
                     />
                     <button className="button">Concluir cadastro</button>
 
+                    <Link to="/login">
+                        <FiLogOut size={16} color="#FB3C03" />
+                        Já tenho cadastro
+                    </Link>
                 </form>
             </section>
         </div>

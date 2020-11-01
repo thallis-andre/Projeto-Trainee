@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import api from '../../services/api';
 import {FiLogOut} from 'react-icons/fi';
+import {Link} from 'react-router-dom';
 
 import './styles.css';
 
@@ -49,7 +50,7 @@ export default function Cadastro(){
 
                     <Link to="/login">
                         <FiLogOut size={16} color="#FB3C03" />
-                        Ja tenho cadastro
+                        Já tenho cadastro
                     </Link>
                 </form>
             </section>

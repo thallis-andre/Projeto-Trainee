@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import api from '../../services/api';
 import {FiLogOut} from 'react-icons/fi';
 import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 import './styles.css';
 
@@ -9,6 +11,8 @@ export default function Cadastro(){
     const[name, setName]=useState('');
     const[email, setEmail]=useState('');
     const[senha, setSenha]=useState('');
+    const history = useHistory();
+
    
     async function handleCadastro(e){
         e.preventDefault();
@@ -20,7 +24,12 @@ export default function Cadastro(){
         }
         try{
             const response = await  api.post('register', data);
-            alert(response.data.message);
+            if(response.data) {
+                alert('Usuário cadastrado com sucesso');
+                history.push("/");
+            } else {
+                alert(response.data.message);
+            }
         }
         catch(err){
             alert('Não foi possível realizar o cadastro')

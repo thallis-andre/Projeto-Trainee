@@ -26,7 +26,6 @@ export default function Login() {
             const response = await api.post('/login', data);
             if(response.data.error) {
                 alert(response.data.message);
-                console.log(window.location.href)
             } else {
                 history.push("/home");
             }

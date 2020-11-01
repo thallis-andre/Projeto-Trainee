@@ -56,7 +56,7 @@ export default function Login() {
                     <button className="button" type='submit'>Entrar</button>
 
                     <Link to="/register">
-                        <FiLogIn size={16} color="#FB3C03" />
+                        <FiLogIn size={16} color="#FB3C03" className="icon-login"/>
                         Não tenho cadastro
                     </Link>
 

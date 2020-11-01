@@ -48,8 +48,8 @@ export default function Cadastro(){
                     />
                     <button className="button">Concluir cadastro</button>
 
-                    <Link to="/login">
-                        <FiLogOut size={16} color="#FB3C03" />
+                    <Link to="/">
+                        <FiLogOut size={16} color="#FB3C03" className="icon-login"/>
                         Já tenho cadastro
                     </Link>
                 </form>

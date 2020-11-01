@@ -31,7 +31,6 @@ function Pokemon(props) {
   }
 
 
-  console.log(props.listPokemons)
   return (
     <>
       {

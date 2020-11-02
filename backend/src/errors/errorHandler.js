@@ -24,11 +24,12 @@ module.exports = {
     });
   },
 
-  success(message, response) {
+  success(message, response, token) {
     return response.json({
       error: false,
       satusCode: 200,
       message: message,
+      token
     });
   },
 }

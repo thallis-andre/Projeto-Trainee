@@ -28,6 +28,7 @@ export default function Login() {
                 alert(response.data.message);
             } else {
                 history.push("/home");
+                console.log(response.data)
             }
         } catch (err) {
             alert('Erro no servidor. Por favor, tente novamente !');

@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken')
+
 const User = require('../models/User');
 const bcrypter = require('../utils/bcrypter');
 const errorHandler = require('../errors/errorHandler');
@@ -36,7 +38,14 @@ module.exports = {
       if (user) {
         const passwordCompare = bcrypter.compare(password, user.password)
         if(passwordCompare) {
-          return errorHandler.success('Usuário logado com sucesso', response);
+          
+          const token = jwt.sign({
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            image: user.image,
+          }, 'somepass', {expiresIn: '60m'})
+          return errorHandler.success('Usuário logado com sucesso', response, token);
 
         }else {
           return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
@@ -45,7 +54,6 @@ module.exports = {
       } else {
         return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
       }
-
     } catch (error) {
       return errorHandler.serverError(response);
     }

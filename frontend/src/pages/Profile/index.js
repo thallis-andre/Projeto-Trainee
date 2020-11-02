@@ -2,6 +2,7 @@ import React from 'react';
 
 import './styles.css';
 import Header from '../Header'
+import Upload from '../DisplayImage';
 
 
 function Profile() {
@@ -9,8 +10,7 @@ function Profile() {
       <>    
       <h1>Profile</h1>
       <div>
-      <input type="file" />
-      
+      <Upload />
       </div>
     </>
   );

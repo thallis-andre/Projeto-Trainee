@@ -3,9 +3,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Login from './pages/Login';
+import NotFound from './pages/Not found';
 import Estrutura from './pages/Estrutura';
-import Cadastro from './pages/Cadastro';
 
 export default function Routes() {
     return (

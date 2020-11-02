@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -24,11 +24,11 @@ export default function Login() {
         }
         try {
             const response = await api.post('/login', data);
-            if(response.data.error) {
+            if (response.data.error) {
                 alert(response.data.message);
             } else {
+                localStorage.setItem('token', JSON.stringify(response.data.token));
                 history.push("/home");
-                console.log(response.data)
             }
         } catch (err) {
             alert('Erro no servidor. Por favor, tente novamente !');
@@ -56,7 +56,7 @@ export default function Login() {
                     <button className="button" type='submit'>Entrar</button>
 
                     <Link to="/register">
-                        <FiLogIn size={16} color="#FB3C03" className="icon-login"/>
+                        <FiLogIn size={16} color="#FB3C03" className="icon-login" />
                         Não tenho cadastro
                     </Link>
 

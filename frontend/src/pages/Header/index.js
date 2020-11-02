@@ -7,6 +7,11 @@ import './styles.css';
 import pokeball from '../../assets/pokeball.png';
 
 function Header() {
+
+  function handleLogout() {
+    localStorage.removeItem('token');
+  } 
+  
   return (
     <>
       <Navbar className="header">
@@ -18,7 +23,7 @@ function Header() {
 
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Link to="/">Home</Link> 
+            <Link to="/home">Home</Link> 
           </Nav>
         </Navbar.Collapse>
 
@@ -26,7 +31,7 @@ function Header() {
           <img alt="" src={pokeball} width="25" height="25" className="d-inline-block align-top" />
           <NavDropdown className="dropdown-img">
             <NavDropdown.Item>
-              <Link to="/profile">Meu perfil</Link>
+              <Link to="/" onClick={() => handleLogout()}>Sair</Link>
             </NavDropdown.Item>
           </NavDropdown>
           <Navbar.Text>

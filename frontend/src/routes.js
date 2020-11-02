@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -10,9 +10,15 @@ import Cadastro from './pages/Cadastro';
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/profile" component={Profile} />
-            <Route path="/home" component={Home} />
+            <PrivateRoutes path="/profile" component={Profile} />
+            <PrivateRoutes path="/home" component={Home} />
             <Route path="/" component={Estrutura} />
         </Switch>
     );
+}
+
+
+const PrivateRoutes = props => {
+    const isLogged = !!localStorage.getItem('token')
+    return isLogged ? <Route { ...props } /> : <Redirect to="/" />
 }

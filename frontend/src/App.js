@@ -12,10 +12,10 @@ import Header from './pages/Header';
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Header />
-      <Routes />
-    </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
     </>
   );
 }

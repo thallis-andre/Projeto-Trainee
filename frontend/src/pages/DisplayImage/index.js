@@ -16,9 +16,11 @@ class Upload extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="box">
         <input type="file" onChange={this.handleChange}/>
-        <img src={this.state.file}/>
+        <div >
+            <img src={this.state.file} className="tamanho-imagem"/>
+        </div>
       </div>
     );
   }

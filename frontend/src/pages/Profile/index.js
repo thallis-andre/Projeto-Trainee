@@ -31,11 +31,11 @@ function Profile() {
       </div>
       <input type="text"
         className= "nome"
-        value={user.name}
+        value="user.name"
         disabled="true" />
       <input type="text"
        className="email"
-       value={user.email}
+       value="user.email"
        disabled="true"/>    
     </>
   );

@@ -45,7 +45,7 @@ module.exports = {
             email: user.email,
             image: user.image,
           }, 'somepass', {expiresIn: '60m'})
-          return errorHandler.success('Usuário logado com sucesso', response, token);
+          return errorHandler.success('Usuário logado com sucesso', response, token, email);
 
         }else {
           return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
@@ -54,6 +54,26 @@ module.exports = {
       } else {
         return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
       }
+    } catch (error) {
+      return errorHandler.serverError(response);
+    }
+  },
+
+  async getUser(request, response) {
+    try {
+      const {email} = request.body;
+      
+      const response = await User.findOne({ email });
+
+      const user = {
+        name: response.name,
+        email: response.email,
+        image: response.image
+      }
+      
+      console.log(user)
+      return user
+
     } catch (error) {
       return errorHandler.serverError(response);
     }

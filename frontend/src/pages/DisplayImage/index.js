@@ -1,4 +1,6 @@
+import './styles.css';
 const React = require('react')
+
 class Upload extends React.Component {
   constructor(props){
     super(props)
@@ -21,4 +23,4 @@ class Upload extends React.Component {
     );
   }
 }
-module.exports = Upload
+export default Upload

@@ -11,7 +11,7 @@ function Profile() {
       <Header />
       <h1>Profile</h1>
       <div>
-      <Upload />
+         < Upload />
       </div>
     </>
   );

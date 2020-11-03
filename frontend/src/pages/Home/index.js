@@ -3,6 +3,8 @@ import axios from 'axios';
 
 
 import './styles.css';
+import Header from '../Header';
+
 
 import Sidebar from '../Sidebar'
 import Pokemon from '../Pokemon'
@@ -28,7 +30,7 @@ function Home() {
         const result = getAttributes(data.pokemon.url)
         promises.push(result)
       })
-      
+
       return promises
     }
 
@@ -48,6 +50,7 @@ function Home() {
 
   return (
     <div className="container-home">
+      <Header />
       <div className="sidebar">
         <Sidebar type={pokemonType} setType={setPokemonType} />
       </div>

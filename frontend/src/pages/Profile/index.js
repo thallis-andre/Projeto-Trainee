@@ -26,17 +26,22 @@ function Profile() {
       <>    
       <Header />
       <h1>Profile</h1>
-      <div>
-         < Upload />
-      </div>
-      <input type="text"
-        className= "nome"
-        value="user.name"
-        disabled="true" />
-      <input type="text"
-       className="email"
-       value="user.email"
-       disabled="true"/>    
+      <div className="container">
+        
+        <section className="form">
+          <form >
+            <Upload/> 
+            <input type="text"
+              className= "nome"
+              value="user.name"
+              disabled="true" />
+            <input type="text"
+              className="email"
+              value="user.email"
+              disabled="true"/> 
+            </form>
+          </section>
+       </div>   
     </>
   );
 }

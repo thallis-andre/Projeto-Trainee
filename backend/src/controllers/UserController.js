@@ -18,7 +18,7 @@ module.exports = {
           password: bcrypter.hash(password),
           image,
         });
-
+        
       } else {
         return errorHandler.forbidden('Usuário já cadastrado.', response);
       }
@@ -57,5 +57,17 @@ module.exports = {
     } catch (error) {
       return errorHandler.serverError(response);
     }
+  },
+
+  async uploadImage(request, response) {
+    const { location: url = '' } = request.file;
+    // const { email} = request.body;
+    const email = 'thallis-andre@hotmail.com'
+    // const email = 'fercastronandes@hotmail.com'
+    console.log(request.file)
+
+    const user = await User.findOneAndUpdate({ email }, { image: url });
+
+    return response.json(user);
   },
 };

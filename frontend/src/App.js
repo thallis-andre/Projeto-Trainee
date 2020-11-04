@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Routes from './routes'
+import UserProvider from './context/user'
 
 
 
@@ -11,7 +12,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes />
+        <UserProvider>
+          <Routes />
+        </UserProvider>
       </BrowserRouter>
     </>
   );

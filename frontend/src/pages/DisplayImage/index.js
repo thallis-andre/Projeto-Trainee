@@ -2,7 +2,7 @@ import './styles.css';
 const React = require('react')
 
 class Upload extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       file: null
@@ -17,9 +17,13 @@ class Upload extends React.Component {
   render() {
     return (
       <div className="box">
-        <input type="file" onChange={this.handleChange}/>
+        <input type="file" onChange={this.handleChange} className="input-upload" />
+        {/* <a class="inputWrapper">
+          Editar imagem de perfil
+          <input class="fileInput" type="file" name="file1" onChange={this.handleChange}/>
+        </a> */}
         <div >
-            <img src={this.state.file} className="tamanho-imagem"/>
+          <img src={this.state.file} className="tamanho-imagem" />
         </div>
       </div>
     );

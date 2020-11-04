@@ -8,11 +8,15 @@ import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 import api from '../../services/api';
+import { useUser } from '../../context/user';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const history = useHistory();
+
+    const { user, setUser } = useUser()
+
 
 
     async function handleLogin(e) {
@@ -28,6 +32,7 @@ export default function Login() {
                 alert(response.data.message);
             } else {
                 localStorage.setItem('token', JSON.stringify(response.data.token));
+                setUser(response.data.user)
                 history.push("/home");
             }
         } catch (err) {

@@ -8,3 +8,31 @@
     justify-content: center;
     
 }
+
+
+.input-upload {
+    /* width: 100px; */
+    border: 0;
+}
+
+.inputWrapper {
+    height: 32px;
+    width: 64px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
+}
+.fileInput {
+    cursor: pointer !important;
+    height: 10px;
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    font-size:50px;
+    opacity: 0;
+    -moz-opacity: 0;
+}

@@ -45,7 +45,13 @@ module.exports = {
             email: user.email,
             image: user.image,
           }, 'somepass', {expiresIn: '60m'})
-          return errorHandler.success('Usuário logado com sucesso', response, token);
+
+          const userFront = {
+            name: user.name,
+            email: user.email,
+            image: user.image,
+          }
+          return errorHandler.success('Usuário logado com sucesso', response, token, userFront);
 
         }else {
           return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
@@ -60,11 +66,8 @@ module.exports = {
   },
 
   async uploadImage(request, response) {
-    const { location: url = '' } = request.file;
-    // const { email} = request.body;
-    const email = 'thallis-andre@hotmail.com'
-    // const email = 'fercastronandes@hotmail.com'
-    console.log(request.file)
+    const { location: url = '' } = request.files[0];
+    const { email} = request.body;
 
     const user = await User.findOneAndUpdate({ email }, { image: url });
 

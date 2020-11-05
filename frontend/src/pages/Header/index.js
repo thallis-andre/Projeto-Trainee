@@ -46,7 +46,7 @@ function Header() {
           </NavDropdown>
           <Navbar.Text>
             Logado com:
-            <Link to="/profile"><a>{user.name}</a></Link>
+            <Link to="/profile"><a style={{marginLeft: 5}}>{user.name}</a></Link>
           </Navbar.Text>
         </Navbar.Collapse>
 

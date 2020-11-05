@@ -69,8 +69,33 @@ module.exports = {
     const { location: url = '' } = request.files[0];
     const { email} = request.body;
 
-    const user = await User.findOneAndUpdate({ email }, { image: url });
+    const res = await User.findOneAndUpdate({ email }, { image: url });
+
+    const user = {
+      name: res.name,
+      email: res.email,
+      image: res.image
+    }
 
     return response.json(user);
+  },
+
+  async getUser(request, response) {
+    try {
+      const {email} = request.body;
+
+      const response = await User.findOne({ email });
+
+      const user = {
+        name: response.name,
+        email: response.email,
+        image: response.image
+      }
+
+      return user
+
+    } catch (error) {
+      return errorHandler.serverError(response);
+    }
   },
 };

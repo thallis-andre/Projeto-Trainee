@@ -70,7 +70,8 @@
 
 .label-input span{
     cursor: pointer;
-    margin: 0 0 43% 0;
+    position: relative;
+    left: 215px;
 }
 
 .label-input span:hover{

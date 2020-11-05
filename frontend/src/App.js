@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Routes from './routes'
 import UserProvider from './context/user'
+import LoaderProvider from './context/loader'
 
 
 
@@ -12,9 +13,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <UserProvider>
-          <Routes />
-        </UserProvider>
+        <LoaderProvider>
+          <UserProvider>
+            <Routes />
+          </UserProvider>
+        </LoaderProvider>
       </BrowserRouter>
     </>
   );

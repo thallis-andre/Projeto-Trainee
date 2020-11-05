@@ -8,13 +8,16 @@ import Header from '../Header';
 
 import Sidebar from '../Sidebar'
 import Pokemon from '../Pokemon'
+import Loader from '../Loader'
 
+import { useLoader } from '../../context/loader';
 
 function Home() {
 
   const [pokemonType, setPokemonType] = useState('normal')
   // const [pokemonsbyType, setPokemonsbyType] = useState([])
   const [pokemonsList, setPokemonsList] = useState([])
+  const { loader, setLoader } = useLoader()
 
 
   useEffect(async () => {
@@ -34,10 +37,12 @@ function Home() {
       return promises
     }
 
+    setLoader(true)
     const listPokemonsbyType = await getPokemonsbyType()
     const listPokemonAttributes = await getPokemonAttributes(listPokemonsbyType.data.pokemon)
     Promise.all(listPokemonAttributes).then((values) => {
       setPokemonsList(values)
+      setLoader(false)
     })
 
 
@@ -49,15 +54,19 @@ function Home() {
 
 
   return (
-    <div className="container-home">
-      <Header />
-      <div className="sidebar">
-        <Sidebar type={pokemonType} setType={setPokemonType} />
+    <>
+      <div className="container-home">
+        <Header />
+        <div className="sidebar">
+          <Sidebar type={pokemonType} setType={setPokemonType} />
+        </div>
+        <div className="content">
+          <Pokemon listPokemons={pokemonsList} />
+        </div>
       </div>
-      <div className="content">
-        <Pokemon listPokemons={pokemonsList} />
-      </div>
-    </div>
+      <Loader />
+
+    </>
   );
 }
 

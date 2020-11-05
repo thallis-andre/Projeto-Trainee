@@ -24,13 +24,14 @@ module.exports = {
     });
   },
 
-  success(message, response, token, email) {
+  success(message, response, token, user) {
+
     return response.json({
       error: false,
       satusCode: 200,
       message: message,
       token,
-      user: email
+      user
     });
   },
 }

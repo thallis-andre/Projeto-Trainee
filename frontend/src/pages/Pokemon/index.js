@@ -39,10 +39,10 @@ function Pokemon(props) {
             <div className="square-pokemon">
               <div className="circle-attributes">
                 <div className="circle-heigth">
-                  <span>{pokemon.data.height}m</span>
+                  <span>{pokemon.data.height / 10}m</span>
                 </div>
                 <div className="circle-weight">
-                  <span>{pokemon.data.weight}Kg</span>
+                  <span>{pokemon.data.weight / 10}Kg</span>
                 </div>
               </div>
 
@@ -51,40 +51,42 @@ function Pokemon(props) {
                 <img src={pokemon.data.sprites.front_default} style={{ width: 70, height: 150 }} />
                 <h2 className="pokemon-name">{pokemon.data.name.toUpperCase()}</h2>
                 <h3 className="type">{pokemon.data.types[0].type.name.toUpperCase()}{pokemon.data.types[1] ? ` - ${pokemon.data.types[1].type.name.toUpperCase()}` : ''}</h3>
-                <h4 className="special-ability">{pokemon.data.abilities[0] ? pokemon.data.abilities[0].ability.name : ''}</h4>
+                <h3 className="special-ability">{pokemon.data.abilities[0] ? pokemon.data.abilities[0].ability.name : ''}</h3>
               </div>
             </div>
 
             <div className="pokemon-attributes">
               <div className="attributes-name">
                 <span>Velocidade</span>
-                <span className="number-status">{pokemon.data.stats[5].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[5].base_stat)} variant={colorProgressBar(pokemon.data.stats[5].base_stat)} />
+
+
+                <span className="number-status">{pokemon.data.stats[5] ? pokemon.data.stats[5].base_stat : 0 }</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[5] ? pokemon.data.stats[5].base_stat: 0)} variant={colorProgressBar(pokemon.data.stats[5] ? pokemon.data.stats[5].base_stat : 0)} />
               </div>
               <div className="attributes-name">
                 <span>Defesa especial</span>
-                <span className="number-status">{pokemon.data.stats[4].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[4].base_stat)} variant={colorProgressBar(pokemon.data.stats[4].base_stat)} />
+                <span className="number-status">{pokemon.data.stats[4] ? pokemon.data.stats[4].base_stat : 0}</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[4] ? pokemon.data.stats[4].base_stat : 0)} variant={colorProgressBar(pokemon.data.stats[4] ? pokemon.data.stats[4].base_stat : 0)} />
               </div>
               <div className="attributes-name">
                 <span>Ataque especial</span>
-                <span className="number-status">{pokemon.data.stats[3].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[3].base_stat)} variant={colorProgressBar(pokemon.data.stats[3].base_stat)} />
+                <span className="number-status">{pokemon.data.stats[3] ? pokemon.data.stats[3].base_stat : 0}</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[3] ? pokemon.data.stats[3].base_stat : 0)} variant={colorProgressBar(pokemon.data.stats[3] ? pokemon.data.stats[3].base_stat : 0)} />
               </div>
               <div className="attributes-name">
                 <span>Defesa</span>
-                <span className="number-status">{pokemon.data.stats[2].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[2].base_stat)} variant={colorProgressBar(pokemon.data.stats[2].base_stat)} />
+                <span className="number-status">{pokemon.data.stats[2] ? pokemon.data.stats[2].base_stat : 0}</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[2] ? pokemon.data.stats[2].base_stat : 0)} variant={colorProgressBar(pokemon.data.stats[2] ? pokemon.data.stats[2].base_stat : 0)} />
               </div>
               <div className="attributes-name">
                 <span>Ataque</span>
-                <span className="number-status">{pokemon.data.stats[1].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[1].base_stat)} variant={colorProgressBar(pokemon.data.stats[1].base_stat)} />
+                <span className="number-status">{pokemon.data.stats[1] ? pokemon.data.stats[1].base_stat : 0}</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[1] ? pokemon.data.stats[1].base_stat : 0)} variant={colorProgressBar(pokemon.data.stats[1] ? pokemon.data.stats[1].base_stat : 0)} />
               </div>
               <div className="attributes-name">
                 <span>Hp</span>
-                <span className="number-status">{pokemon.data.stats[0].base_stat}</span>
-                <ProgressBar now={returnProgress(pokemon.data.stats[0].base_stat)} variant={colorProgressBar(pokemon.data.stats[0].base_stat)} />
+                <span className="number-status">{pokemon.data.stats[0] ? pokemon.data.stats[0].base_stat : 0}</span>
+                <ProgressBar now={returnProgress(pokemon.data.stats[0] ? pokemon.data.stats[0].base_stat : 0)} variant={colorProgressBar(pokemon.data.stats[0] ? pokemon.data.stats[0].base_stat : 0)} />
               </div>
             </div>
 

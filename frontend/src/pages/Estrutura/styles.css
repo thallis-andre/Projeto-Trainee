@@ -24,8 +24,9 @@
   text-align: center;
 }
 .estrutura-image h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 30px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 60px;
 }
 .estrutura-image img {
   width: 150px;

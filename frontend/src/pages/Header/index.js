@@ -7,31 +7,22 @@ import './styles.css';
 
 import pokeball from '../../assets/pokeball.png';
 import defaultUser from '../../assets/default-user-image.png';
+import { useUser } from '../../context/user';
+
 
 function Header() {
 
-  const [user, setUser] = useState();
+  const { user, setUser } = useUser()
+
 
 
   function handleLogout() {
     localStorage.removeItem('token');
   }
 
-  function getDecodedToken() {
-    const tokenLocal = localStorage.getItem('token')
-    if (tokenLocal) {
-      setUser(jwt_decode(tokenLocal))
-    } else {
-      setUser(null)
-    }
-  }
-
-  useEffect(() => {
-    getDecodedToken()
-  }, []);
 
 
-  return user == null ? null : (
+  return (
     <>
       <Navbar className="header">
 
@@ -55,7 +46,7 @@ function Header() {
           </NavDropdown>
           <Navbar.Text>
             Logado com:
-            <Link to="/profile"><a>{user.name}</a></Link>
+            <Link to="/profile"><a style={{marginLeft: 5}}>{user.name}</a></Link>
           </Navbar.Text>
         </Navbar.Collapse>
 

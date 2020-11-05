@@ -18,7 +18,7 @@ module.exports = {
           password: bcrypter.hash(password),
           image,
         });
-
+        
       } else {
         return errorHandler.forbidden('Usuário já cadastrado.', response);
       }
@@ -45,7 +45,13 @@ module.exports = {
             email: user.email,
             image: user.image,
           }, 'somepass', {expiresIn: '60m'})
-          return errorHandler.success('Usuário logado com sucesso', response, token, email);
+
+          const userFront = {
+            name: user.name,
+            email: user.email,
+            image: user.image,
+          }
+          return errorHandler.success('Usuário logado com sucesso', response, token, userFront);
 
         }else {
           return errorHandler.badRequest('Combinação de e-mail / senha inválida', response);
@@ -59,10 +65,27 @@ module.exports = {
     }
   },
 
+
+  async uploadImage(request, response) {
+    const { location: url = '' } = request.files[0];
+    const { email} = request.body;
+
+    const res = await User.findOneAndUpdate({ email }, { image: url });
+
+    const user = {
+      name: res.name,
+      email: res.email,
+      image: res.image
+    }
+
+    return response.json(user);
+  },
+
   async getUser(request, response) {
     try {
       const {email} = request.body;
       
+
       const response = await User.findOne({ email });
 
       const user = {
@@ -70,7 +93,7 @@ module.exports = {
         email: response.email,
         image: response.image
       }
-      
+
       console.log(user)
       return user
 

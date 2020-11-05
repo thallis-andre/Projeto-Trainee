@@ -23,7 +23,7 @@ module.exports = {
         return errorHandler.forbidden('Usuário já cadastrado.', response);
       }
 
-      return response.json(user);
+      return response.json({user, message: 'Usuário cadastrado com sucesso'});
     } catch (error) {
       return errorHandler.serverError(response);
     }

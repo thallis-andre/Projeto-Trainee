@@ -65,6 +65,7 @@ module.exports = {
     }
   },
 
+
   async uploadImage(request, response) {
     const { location: url = '' } = request.files[0];
     const { email} = request.body;
@@ -83,6 +84,7 @@ module.exports = {
   async getUser(request, response) {
     try {
       const {email} = request.body;
+      
 
       const response = await User.findOne({ email });
 
@@ -92,6 +94,7 @@ module.exports = {
         image: response.image
       }
 
+      console.log(user)
       return user
 
     } catch (error) {

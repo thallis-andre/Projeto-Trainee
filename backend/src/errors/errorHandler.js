@@ -25,6 +25,7 @@ module.exports = {
   },
 
   success(message, response, token, user) {
+
     return response.json({
       error: false,
       satusCode: 200,
